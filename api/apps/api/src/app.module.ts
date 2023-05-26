@@ -18,8 +18,6 @@ import { AUTH_SERVICE } from '@app/shared';
     {
       provide: AUTH_SERVICE,
       useFactory: (configService: ConfigService) => {
-        console.log('__________________', configService);
-
         const USER = configService.get('RABBITMQ_USER');
         const PASS = configService.get('RABBITMQ_PASS');
         const HOST = configService.get('REBBITMQ_HOST');
@@ -35,6 +33,7 @@ import { AUTH_SERVICE } from '@app/shared';
           },
         });
       },
+      inject: [ConfigService],
     },
   ],
 })

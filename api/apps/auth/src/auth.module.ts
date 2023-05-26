@@ -9,7 +9,7 @@ import { AUTH_SERVICE } from '@app/shared';
   imports: [
     ConfigModule.forRoot({
       isGlobal: true,
-      envFilePath: './.env',
+      envFilePath: './env',
     }),
   ],
   controllers: [AuthController],
